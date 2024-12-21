@@ -9,7 +9,4 @@
 
 <main>
     <HeroBanner />
-
-    <!-- TEST -->
-    < <h1>{data.todos}</h1>>
 </main>
