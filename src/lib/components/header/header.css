@@ -75,10 +75,13 @@ header {
         align-items: center;
         align-items: center;
         max-width: 100%;
+        width: 100%;
+        margin-inline: 0;
+        padding-inline: 0;
     }
 
     & > * {
-        margin: 1rem 0.5rem;
+        margin-block: 1rem;
     }
 
     a[class="logo"] {
@@ -86,7 +89,6 @@ header {
             color: inherit;
             text-decoration: none;
             margin-left: 0;
-            padding-inline: 0;
         }
 
         span {
