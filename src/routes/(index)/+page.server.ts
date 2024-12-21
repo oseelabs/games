@@ -1,10 +1,9 @@
-import { getTodos } from "$lib/vercel/supabase";
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
-    const todos = await getTodos();
+    const todos: [] = [];
 
     return {
-        todos
+        todos: todos ?? []
     }
 };
