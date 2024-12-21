@@ -1,0 +1,10 @@
+{
+    "hero": {
+        "heading": {
+            "start": "Welcome to ",
+            "highlight": "Osee Games",
+            "end": "Website"
+        },
+        "description": "We are here to provide you with the best gaming experience."
+    }
+}
