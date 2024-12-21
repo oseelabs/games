@@ -10,10 +10,10 @@
 </script>
 
 {#if showBanner}
-    <div class="banner-content" transition:slide>
+    <div class="banner-content" transition:slide={{ duration: 500 }}>
         <p>{bannerText}</p>
         <button 
-            onclick={() => {}} 
+            onclick={() => showBanner = false} 
             aria-label="close banner"
         >
             <span class="material-symbols-outlined">close</span>
@@ -32,6 +32,10 @@
         color: var(--color-white);
         width: 100%;
         max-width: 780px;
+    }
+
+    .banner-content.hidden {
+        display: none;
     }
 
     .banner-content p {

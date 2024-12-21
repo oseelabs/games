@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { slide } from "svelte/transition";
+
     interface Props {
         open: boolean;
     };
@@ -7,7 +9,7 @@
 </script>
 
 {#if open}
-    <nav>
+    <nav transition:slide={{ duration: 300, delay: 0, axis: "x" }}>
         <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/about">About</a></li>
@@ -24,7 +26,6 @@
         position: absolute;
         width: min(100%, 28rem);
         inset: 0 0 0 auto;
-        transition: display 0.3s ease-in-out;
     }
 
     ul {

@@ -10,9 +10,10 @@
     let searchInput: HTMLInputElement;
     let nav: HTMLElement;
 
+    let navOpen: boolean = $state(false);
+
     function toggleMenu() {
-        nav!.classList.toggle('open');
-        mainBanner!.classList.toggle('hide');
+        navOpen = !navOpen;
     }
 
     function handleSearchIconClick() {
@@ -20,7 +21,6 @@
     }
 
     onMount(() => {
-        nav!.classList.remove('open');
         searchIcon!.addEventListener('click', handleSearchIconClick);
     });
 </script>
@@ -47,7 +47,7 @@
                 aria-label="search icon"
             >search</span>
         
-            <button on:click={toggleMenu} aria-label="menu" aria-expanded="false">
+            <button onclick={toggleMenu} aria-label="menu" aria-expanded="false">
                 <span class="menu material-symbols-outlined">menu</span>
             </button>
         </div>
@@ -64,6 +64,9 @@
     />
 </header>
 
-<div bind:this={nav}>
-    <Nav open={false} />
+<div bind:this={nav} style="position: relative;">
+    {#if navOpen}
+        <div role="none" class="overlay" onclick={toggleMenu}></div>
+    {/if}
+    <Nav open={navOpen} />
 </div>
