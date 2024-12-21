@@ -1,7 +1,9 @@
 <script lang="ts">
+	import saveBlob from '$lib/vercel/blob';
     import data from './data.json';
 
     const hero = data.hero;
+    saveBlob('test', 'hero.txt', JSON.stringify(hero, null, 2));
 </script>
 
 <section class="hero-banner">
